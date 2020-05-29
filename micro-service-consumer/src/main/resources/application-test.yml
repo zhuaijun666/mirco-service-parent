@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: dubbo-consumer
+dubbo:
+  application:
+    name: demo-consumer
+    qos-enable: false
+
+  registry:
+    address: zookeeper://172.16.100.197:2181,172.16.100.198:2181,172.16.100.199:2181
+    client: curator
+#    simplified: true
+
+  consumer:
+      timeout: 1000

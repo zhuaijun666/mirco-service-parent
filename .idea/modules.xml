@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../mircoserviceparent/micro-service-common/micro-service-common.iml" filepath="$PROJECT_DIR$/../mircoserviceparent/micro-service-common/micro-service-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mircoserviceparent/micro-service-consumer/micro-service-consumer.iml" filepath="$PROJECT_DIR$/../mircoserviceparent/micro-service-consumer/micro-service-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mircoserviceparent/micro-service-dao/micro-service-dao.iml" filepath="$PROJECT_DIR$/../mircoserviceparent/micro-service-dao/micro-service-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mircoserviceparent/micro-service-web/micro-service-web.iml" filepath="$PROJECT_DIR$/../mircoserviceparent/micro-service-web/micro-service-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mircoserviceparent/mirco-service-api/mirco-service-api.iml" filepath="$PROJECT_DIR$/../mircoserviceparent/mirco-service-api/mirco-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mircoserviceparent/mirco-service-parent.iml" filepath="$PROJECT_DIR$/../mircoserviceparent/mirco-service-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mircoserviceparent/miro-service-provider/miro-service-provider.iml" filepath="$PROJECT_DIR$/../mircoserviceparent/miro-service-provider/miro-service-provider.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,48 @@
+server:
+  port: 8099
+  servlet:
+    context-path: /web
+spring:
+  application:
+    name: service-web
+  datasource:
+  #   数据源基本配置
+    username: root
+    password: 2wsxE1qL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://43.254.2.89:13306/soul?characterEncoding=utf-8&&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    #   数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+dubbo:
+  application:
+    name: ${spring.application.name}
+    qos-enable: false #用于运维的监控服务， 默认是开启状态，并且端口是22222。开发环境为了避免端口冲突，建议直接关掉
+  protocol:
+    name: dubbo
+    port: 20880
+
+  registry:                 #注册中心配置，用于配置连接注册中心相关信息。
+    address: zookeeper://127.0.0.1:2181?client=curator
+#    simplified: true
+#  metadata-report:
+#    address: zookeeper://127.0.0.1:2181
+  provider:
+    timeout: 1000
+
+soul:
+  dubbo:
+    adminUrl: http://localhost:9095
+    contextPath: /dubboTest
+    appName: dubboTest

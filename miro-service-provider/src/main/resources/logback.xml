@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <!-- 定义变量,日志文件名 -->
+    <property name="appName" value="dubbp-provider" />
+    <property name="baseFile" value="dubbp-provider"/>
+    <!-- 日志文件存放在根目录下 /app/oysept-springboot-logback/logs文件夹中-->
+    <property name="rootPath" value="/app/logs" />
+
+    <!-- 日志打印级别 -->
+    <property name="log.root.level" value="INFO"></property>
+
+    <!-- 设置上下文名称 -->
+    <contextName>${appName}</contextName>
+
+    <!-- 把日志在控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%X{thread} [%date{yyyy-MM-dd HH:mm:ss.SSS}] %level %logger{36} %line - %msg%n</pattern>
+
+            <!-- 设置字符集 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 文件输出日志 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${rootPath}/${baseFile}.log</File>
+        <!-- 日志文件rolling策略 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${rootPath}/${baseFile}_%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+            <!-- 日志保留天数 -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+
+        <!-- 日志输出格式 -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%X{thread} [%date{yyyy-MM-dd HH:mm:ss.SSS}] %level %logger{36} %line - %msg%n</Pattern>
+
+            <!-- 设置字符集 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 文件输出日志 (文件大小策略进行文件输出，每小时产生一个日志文件给异常监控平台进行分析) -->
+    <appender name="ERRORFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${rootPath}/${baseFile}_error.log</File>
+        <!-- 日志文件rolling策略 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${rootPath}/${baseFile}_error_%d{yyyy-MM-dd}.log.gz
+            </FileNamePattern>
+            <!-- 日志保留天数 -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <!-- 日志输出格式 -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%X{thread} [%date{yyyy-MM-dd HH:mm:ss.SSS}] %level %logger{36} %line - %msg%n</Pattern>
+
+            <!-- 设置字符集 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>10000</queueSize>
+        <appender-ref ref="FILE" />
+    </appender>
+
+    <logger name="org.springframework" additivity="false">
+        <level value="INFO" />
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="ASYNC" />
+        <appender-ref ref="ERRORFILE" />
+    </logger>
+
+    <logger name="org.apache" level="WARN">
+        <appender-ref ref="ERRORFILE" />
+    </logger>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="ASYNC" />
+        <appender-ref ref="ERRORFILE" />
+    </root>
+
+</configuration>

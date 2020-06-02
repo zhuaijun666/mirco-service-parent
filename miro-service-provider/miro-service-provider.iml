@@ -30,6 +30,13 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" level="project" />
+    <orderEntry type="library" name="Maven: com.dianping.cat:cat-client:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.unidal.framework:foundation-service:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-container-default:1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-classworlds:2.5.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.xbean:xbean-reflect:3.7" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-utils:3.0.24" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.9.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.1.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.1.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.1.5.RELEASE" level="project" />

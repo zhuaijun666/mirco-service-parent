@@ -22,7 +22,10 @@ public class TestApiConsumer  {
 
     @PostConstruct
     public void testApi() {
-        testApi.test(new TestBean());
-        log.info("dubbo invoker");
+        for (int i = 0; i< 100; i++) {
+            testApi.invoke(new TestBean());
+            log.info("dubbo invoker");
+        }
+
     }
 }

@@ -17,6 +17,10 @@ import org.springframework.context.annotation.ImportResource;
 public class ConsumerApplication {
 
     public static void main(String[] args) {
+        try {
+            Class.forName("org.apache.dubbo.rpc.RpcContext");
+        } catch (Exception e) {
+        }
         SpringApplication.run(ConsumerApplication.class, args);
 
         log.info("consummer success");

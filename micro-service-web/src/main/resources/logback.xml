@@ -42,6 +42,8 @@
         </encoder>
     </appender>
 
+    <appender name="CatAppender" class="com.zhizu.common.cat.log.appender.CatLogbackAppender"/>
+
     <!-- 文件输出日志 (文件大小策略进行文件输出，每小时产生一个日志文件给异常监控平台进行分析) -->
     <appender name="ERRORFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>${rootPath}/${baseFile}_error.log</File>
@@ -84,6 +86,7 @@
     </logger>
 
     <root level="DEBUG">
+        <appender-ref ref="CatAppender" />
         <appender-ref ref="STDOUT" />
         <appender-ref ref="ASYNC" />
         <appender-ref ref="ERRORFILE" />

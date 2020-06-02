@@ -2,6 +2,7 @@ package com.zhizu.dao.config;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInterceptor;
+import com.zhizu.mybatis.plugin.CatMybatisPlugin;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -31,6 +32,9 @@ public class MybatisConfig implements TransactionManagementConfigurer {
     private DataSource dataSource;
 
     @Resource
+    private CatMybatisPlugin catMybatisPlugin;
+
+    @Resource
     private DateTimeInterceptor dateTimeInterceptor;
 
     @Bean(name = "sqlSessionFactory")
@@ -46,7 +50,7 @@ public class MybatisConfig implements TransactionManagementConfigurer {
         pageHelper.setProperties(properties);
 
         //添加插件
-        sqlSessionFactoryBean.setPlugins(new Interceptor[]{pageHelper, dateTimeInterceptor});
+        sqlSessionFactoryBean.setPlugins(new Interceptor[]{pageHelper, dateTimeInterceptor, catMybatisPlugin});
 
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();

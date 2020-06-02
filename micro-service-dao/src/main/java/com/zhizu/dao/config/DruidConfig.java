@@ -91,6 +91,7 @@ public class DruidConfig {
         datasource.setPoolPreparedStatements(poolPreparedStatements);
         datasource.setMaxPoolPreparedStatementPerConnectionSize(maxPoolPreparedStatementPerConnectionSize);
 
+
         return datasource;
     }
 }

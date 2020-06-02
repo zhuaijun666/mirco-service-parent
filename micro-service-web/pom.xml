@@ -10,8 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>micro-service-web</artifactId>
-
-
     <dependencies>
         <!-- module dependence -->
         <dependency>
@@ -31,6 +29,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
 
     </dependencies>
 

@@ -15,7 +15,7 @@ import org.dromara.soul.client.common.annotation.SoulClient;
 public class TestProviderImpl implements TestApi {
     @Override
 //    @SoulClient(path = "/test", desc = "dubboTest")
-    public TestBean test(TestBean testBean) {
+    public TestBean invoke(TestBean testBean) {
         return testBean;
     }
 }

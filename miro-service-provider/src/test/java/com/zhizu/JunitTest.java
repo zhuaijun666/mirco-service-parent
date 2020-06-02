@@ -21,7 +21,7 @@ public class JunitTest {
 
     @Test
     public void test() {
-        testApi.test(null);
+        testApi.invoke(null);
 
     }
 }

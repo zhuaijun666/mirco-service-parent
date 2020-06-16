@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <!--4、声明需要暴露的服务接口，ref属性要指向容器中的接口实现对象-->
-    <dubbo:reference id="test"  interface="com.zhizu.rpc.api.TestApi" />
+    <dubbo:reference id="test"  interface="com.zhizu.rpc.api.TestApi"/>
 
 </beans>

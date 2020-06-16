@@ -22,7 +22,6 @@
       <module name="micro-service-web" target="1.8" />
       <module name="mirco-service-api" target="1.8" />
       <module name="mirco-service-parent" target="1.8" />
-      <module name="mircoserviceparent" target="1.8" />
       <module name="miro-service-provider" target="1.8" />
     </bytecodeTargetLevel>
   </component>

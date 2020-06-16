@@ -27,10 +27,10 @@ dubbo:
     qos-enable: false #用于运维的监控服务， 默认是开启状态，并且端口是22222。开发环境为了避免端口冲突，建议直接关掉
   protocol:
     name: dubbo
-    port: 20880
+    port: 20881
 
   registry:                 #注册中心配置，用于配置连接注册中心相关信息。
-    address: zookeeper://127.0.0.1:2181?client=curator
+    address: zookeeper://zk1:2181,zk2:2181,zk3:2181?client=curator
 #    simplified: true
 #  metadata-report:
 #    address: zookeeper://127.0.0.1:2181

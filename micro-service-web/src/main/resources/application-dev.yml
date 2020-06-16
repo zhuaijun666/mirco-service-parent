@@ -10,7 +10,7 @@ spring:
     username: root
     password: 2wsxE1qL
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://43.254.2.89:13306/soul?characterEncoding=utf-8&&useSSL=false
+    url: jdbc:mysql://124.70.159.221:13306/soul?characterEncoding=utf-8&&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置
     initialSize: 5
@@ -34,7 +34,7 @@ dubbo:
     port: 20880
 
   registry:                 #注册中心配置，用于配置连接注册中心相关信息。
-    address: zookeeper://127.0.0.1:2181?client=curator
+    address: zookeeper://zk1:2181,zk2:2181,zk3:2181?client=curator
 #    simplified: true
 #  metadata-report:
 #    address: zookeeper://127.0.0.1:2181
@@ -46,3 +46,28 @@ soul:
     adminUrl: http://localhost:9095
     contextPath: /dubboTest
     appName: dubboTest
+# no web
+#spring.main.web-environment=false
+
+# log config
+logging.config: classpath:logback.xml
+
+### xxl-job admin address list, such as "http://address" or "http://address01,http://address02"
+xxl.job:
+  admin.addresses: http://xxl-job.dev.com/xxl-job-admin/
+
+### xxl-job, access token
+  accessToken:
+
+### xxl-job executor appname
+  executor:
+    appname: web-executor
+### xxl-job executor registry-address: default use address to registry , otherwise use ip:port if address is null
+    address:
+### xxl-job executor server-info
+    ip:
+    port: 9991
+### xxl-job executor log-path
+    logpath: /data/applogs/xxl-job/jobhandler
+### xxl-job executor log-retention-days
+    logretentiondays: 30

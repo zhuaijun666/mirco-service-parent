@@ -1,5 +1,6 @@
 package com.zhizu;
 
+import com.dianping.cat.Cat;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,12 +18,7 @@ import org.springframework.context.annotation.ImportResource;
 public class ConsumerApplication {
 
     public static void main(String[] args) {
-        try {
-            Class.forName("org.apache.dubbo.rpc.RpcContext");
-        } catch (Exception e) {
-        }
         SpringApplication.run(ConsumerApplication.class, args);
-
         log.info("consummer success");
     }
 }

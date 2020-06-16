@@ -1,5 +1,6 @@
 package com.zhizu.service.impl;
 
+import com.baidu.disconf.client.common.annotations.DisconfItem;
 import com.zhizu.common.service.BaseServiceImpl;
 import com.zhizu.dao.model.AppAuth;
 import com.zhizu.service.AppAuthService;
@@ -14,4 +15,6 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class AppAuthServiceImpl extends BaseServiceImpl<AppAuth> implements AppAuthService {
+
+
 }

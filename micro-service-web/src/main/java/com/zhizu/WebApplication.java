@@ -20,13 +20,8 @@ import java.io.IOException;
 public class WebApplication {
 
     public static void main(String[] args) throws IOException {
-        try {
-            Class.forName("org.apache.dubbo.rpc.RpcContext");
-        } catch (Exception e) {
-        }
-        Cat.logMetricForCount("metric.key");
+        Cat.logEvent("start", "WebApplication-start");
         SpringApplication.run(WebApplication.class, args);
-        Cat.getManager().setTraceMode(true);
         log.info("web启动完成");
     }
 }

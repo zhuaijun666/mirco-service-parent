@@ -4,7 +4,7 @@ package com.zhizu.common.enums;
  * Created by zino on 28/11/2016.
  */
 public enum ErrorMessage {
-    SUCCESS("0", "成功"),
+    SUCCESS("0", "success"),
     SYSTEM_ERROR("1", "系统错误"),
     FORM_ERROR("2", "表单错误"),
     NO_PERMISSION("3", "无权限"),

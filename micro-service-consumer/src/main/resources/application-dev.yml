@@ -7,7 +7,7 @@ dubbo:
     qos-enable: false
 
   registry:
-    address: zookeeper://localhost:2181
+    address: zookeeper://zk1:2181,zk2:2181,zk3:2181
     client: curator
 #    simplified: true
 #  metadata-report:

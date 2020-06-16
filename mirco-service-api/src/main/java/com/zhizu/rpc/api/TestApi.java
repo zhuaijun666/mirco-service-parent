@@ -13,4 +13,6 @@ public interface TestApi {
      * @param testBean
      */
     TestBean invoke(TestBean testBean);
+
+    TestBean invoke2(TestBean testBean);
 }

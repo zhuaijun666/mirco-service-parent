@@ -5,7 +5,7 @@
     <parent>
         <artifactId>mirco-service-parent</artifactId>
         <groupId>com.zhizu</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.zhizu</groupId>
             <artifactId>miro-service-provider</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.1</version>
         </dependency>
 
         <!-- 引入SpringBoot-web依赖 -->
@@ -25,12 +25,10 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>2.2.0</version>
         </dependency>
-
-
     </dependencies>
 
     <!--多环境 Maven profile整合Spring profile-->

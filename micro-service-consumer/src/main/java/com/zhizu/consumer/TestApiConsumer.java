@@ -22,10 +22,16 @@ public class TestApiConsumer  {
 
     @PostConstruct
     public void testApi() {
-        for (int i = 0; i< 100; i++) {
+
+        while(true) {
             testApi.invoke(new TestBean());
             log.info("dubbo invoker");
-        }
 
+            try {
+                Thread.sleep(2000L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

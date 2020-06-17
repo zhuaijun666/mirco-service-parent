@@ -5,6 +5,15 @@ server:
 spring:
   application:
     name: service-web
+  kafka:
+    bootstrap-servers:
+    - 172.16.100.197:9092,172.16.100.198:9092,172.16.100.199:9092
+    consumer:
+      group-id: web-consumer-group
+      enable-auto-commit: true
+      auto-commit-interval: 1000
+      auto-offset-reset: earliest
+      client-id: web-producer-group
   datasource:
   #   数据源基本配置
     username: root

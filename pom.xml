@@ -51,6 +51,19 @@
         <mapstruct.version>1.2.0.Final</mapstruct.version>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>releases</name>
+            <url>http://nexus.devops.zhizukj.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot</id>
+            <name>snapshot</name>
+            <url>http://nexus.devops.zhizukj.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencyManagement>
         <dependencies>
             <!--<dependency>-->

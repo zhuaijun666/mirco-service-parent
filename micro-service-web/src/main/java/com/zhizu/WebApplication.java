@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.kafka.annotation.EnableKafka;
 
 import javax.smartcardio.CardTerminal;
 import java.io.IOException;
@@ -15,6 +16,7 @@ import java.io.IOException;
  * @Date 2020/5/20
  **/
 @EnableDubbo(scanBasePackages = "com.zhizu")
+@EnableKafka
 @SpringBootApplication
 @Slf4j
 public class WebApplication {

@@ -35,6 +35,18 @@
             <artifactId>xxl-job-core</artifactId>
             <version>2.2.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.4.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_2.11</artifactId>
+            <version>2.5.14</version>
+        </dependency>
     </dependencies>
 
     <!--多环境 Maven profile整合Spring profile-->
@@ -96,7 +108,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.zhizu.ProviderApplication</mainClass>
+                    <mainClass>com.zhizu.WebApplication</mainClass>
                     <executable>true</executable>
                 </configuration>
             </plugin>

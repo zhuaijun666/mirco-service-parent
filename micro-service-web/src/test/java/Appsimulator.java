@@ -1,12 +1,18 @@
 import com.dianping.cat.Cat;
 import com.dianping.cat.message.Transaction;
+import javassist.expr.NewArray;
+import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import tk.mybatis.mapper.genid.GenId;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.*;
 
 @RunWith(JUnit4.class)
 public class Appsimulator {
@@ -73,6 +79,76 @@ public class Appsimulator {
         try {
             thread.join();
         } catch (InterruptedException e) {
+        }
+    }
+
+    private  final static BlockingQueue queue = new ArrayBlockingQueue(6*1024);
+
+    @Test
+    public void batchProcess() throws Exception {
+
+        Executor executor = Executors.newFixedThreadPool(1);
+
+
+        executor.execute(new consumer());
+
+        while (true) {
+            queue.offer(111);
+
+
+        }
+
+
+
+
+
+
+
+    }
+
+    public static class consumer implements Runnable{
+
+        @Override
+        public void run() {
+
+            List list = new ArrayList();
+            long lastTime = System.currentTimeMillis();
+            while (true) {
+                if (System.currentTimeMillis() - lastTime > 3000l){
+                    // process
+                    if (!list.isEmpty()) {
+
+                    }
+
+                    System.out.println("tinme");
+                    list =  new ArrayList();
+                    lastTime = System.currentTimeMillis();
+                }
+
+                if (list.size() > 200) {
+                    // process
+
+                    System.out.println("size");
+                    list =  new ArrayList();
+                }
+
+                try {
+                    Object object = queue.poll(1l, TimeUnit.SECONDS);
+
+                    if (object != null) {
+                        list.add(object);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+    }
+
+    public void produceEle(Object obj) {
+        if (!this.queue.offer(obj)) {
+            System.out.println("error ");
         }
     }
 }
